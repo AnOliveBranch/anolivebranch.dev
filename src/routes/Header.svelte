@@ -1,6 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 	import triangle from '$lib/images/triangle.svg';
+	import logoVertical from '$lib/images/logo-vertical.png';
+	import logoHorizonal from '$lib/images/logo-horizonal.png';
 </script>
 
 <header>
@@ -8,26 +10,26 @@
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">
-					Home
-					<img src={triangle} alt="Current Page" />
+					<img class="logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
+					<img class="page-indicator" src={triangle} alt="Current Page" />
 				</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
 				<a href="/projects">
 					Projects
-					<img src={triangle} alt="Current Page" />
+					<img class="page-indicator" src={triangle} alt="Current Page" />
 				</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">
 					About
-					<img src={triangle} alt="Current Page" />
+					<img class="page-indicator" src={triangle} alt="Current Page" />
 				</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
 				<a href="/contact">
 					Contact
-					<img src={triangle} alt="Current Page" />
+					<img class="page-indicator" src={triangle} alt="Current Page" />
 				</a>
 			</li>
 		</ul>
@@ -70,7 +72,7 @@
 		transition: 0.5s;
 	}
 
-	li img {
+	li .page-indicator {
 		display: none;
 		position: absolute;
 		bottom: 0;
@@ -80,8 +82,13 @@
 		height: auto;
 	}
 
-	li[aria-current='page'] img {
+	li[aria-current='page'] .page-indicator {
 		display: block;
+	}
+
+	li .logo {
+		height: 2.5em;
+		margin: auto;
 	}
 
 	li a:hover {
