@@ -1,38 +1,68 @@
 <script>
 	import { page } from '$app/stores';
-	import triangle from '$lib/images/triangle.svg';
-	import logoVertical from '$lib/images/logo-vertical.png';
+	import triangleVertical from '$lib/images/triangle-vertical.svg';
+	import triangleHorizonal from '$lib/images/triangle-horizontal.svg';
 	import logoHorizonal from '$lib/images/logo-horizonal.png';
+	import hamburger from '$lib/images/hamburger.svg';
+	import closeHamburger from '$lib/images/close-hamburger.svg';
+
+	let navShown = true;
+
+	function showNav() {
+		navShown = true;
+	}
+
+	function hideNav() {
+		navShown = false;
+	}
 </script>
 
 <header>
+	<div id={navShown ? 'topBarShown' : 'topBarHidden'}>
+		{#if navShown}
+			<button on:click={hideNav} class="hamburger mobile" id="hamburger-close">
+				<img class="mobile" src={closeHamburger} alt="Hamburger Close Icon" />
+			</button>
+		{:else}
+			<img id="navLogo" class="mobile logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
+			<button on:click={showNav} class="hamburger mobile" id="hamburger-open">
+				<img class="mobile" src={hamburger} alt="Hamburger Icon" />
+			</button>
+		{/if}
+	</div>
 	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">
-					<img class="logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
-					<img class="page-indicator" src={triangle} alt="Current Page" />
-				</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-				<a href="/projects">
-					Projects
-					<img class="page-indicator" src={triangle} alt="Current Page" />
-				</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">
-					About
-					<img class="page-indicator" src={triangle} alt="Current Page" />
-				</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-				<a href="/contact">
-					Contact
-					<img class="page-indicator" src={triangle} alt="Current Page" />
-				</a>
-			</li>
-		</ul>
+		{#if navShown}
+			<ul id="navList">
+				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+					<a href="/">
+						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
+						<img class="logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
+						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
+					</a>
+				</li>
+				<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
+					<a href="/projects">
+						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
+						Projects
+						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
+					</a>
+				</li>
+				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+					<a href="/about">
+						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
+						About
+						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
+					</a>
+				</li>
+				<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
+					<a href="/contact">
+						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
+						Contact
+						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
+					</a>
+				</li>
+			</ul>
+		{/if}
 	</nav>
 </header>
 
@@ -62,28 +92,20 @@
 	li a {
 		color: white;
 		text-decoration: none;
+		transition: 0.5s;
 		padding: 1em 0;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 		box-sizing: border-box;
-		transition: 0.5s;
 	}
 
 	li .page-indicator {
 		display: none;
 		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
 		width: 20px;
 		height: auto;
-	}
-
-	li[aria-current='page'] .page-indicator {
-		display: block;
 	}
 
 	li .logo {
@@ -93,5 +115,84 @@
 
 	li a:hover {
 		background-color: rgb(120, 186, 255);
+	}
+
+	/*
+	 * Mobile navigation design
+	 */
+	@media screen and (max-width: 600px) {
+		.desktop {
+			display: none;
+		}
+
+		nav ul {
+			flex-direction: column;
+		}
+
+		li a {
+			flex-direction: row;
+		}
+
+		li .page-indicator {
+			bottom: 50%;
+			left: 1em;
+			transform: translateY(50%);
+		}
+
+		li[aria-current='page'] .page-indicator.mobile {
+			display: block;
+		}
+
+		#topBarShown,
+		#topBarHidden {
+			margin: 0.5em;
+			display: flex;
+			align-items: center;
+		}
+
+		#topBarShown {
+			justify-content: right;
+		}
+
+		#topBarHidden {
+			justify-content: space-between;
+		}
+
+		#navLogo {
+			height: 2.5em;
+		}
+
+		button {
+			cursor: pointer;
+			background: none;
+			border: none;
+		}
+	}
+
+	/*
+	 * Desktop navigation design
+	 */
+	@media screen and (min-width: 600px) {
+		.mobile {
+			display: none;
+		}
+
+		nav ul {
+			flex-direction: row;
+		}
+
+		li a {
+			flex-direction: column;
+		}
+
+		li .page-indicator {
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		li[aria-current='page'] .page-indicator.desktop {
+			display: block;
+		}
 	}
 </style>
