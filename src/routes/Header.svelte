@@ -3,10 +3,12 @@
 	import triangleVertical from '$lib/images/triangle-vertical.svg';
 	import triangleHorizonal from '$lib/images/triangle-horizontal.svg';
 	import logoHorizonal from '$lib/images/logo-horizonal.png';
+	import logoOnly from '$lib/images/logo-only.png';
 	import hamburger from '$lib/images/hamburger.svg';
 	import closeHamburger from '$lib/images/close-hamburger.svg';
 
 	let navShown = true;
+	let currentPage = 'Projects';
 
 	function showNav() {
 		navShown = true;
@@ -24,7 +26,14 @@
 				<img class="mobile" src={closeHamburger} alt="Hamburger Close Icon" />
 			</button>
 		{:else}
-			<img id="navLogo" class="mobile logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
+			{#if currentPage == 'Home'}
+				<img id="navLogo" class="mobile logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
+			{:else}
+				<div id="logoAndText">
+					<img id="navLogo" class="mobile logo" src={logoOnly} alt="AnOliveBranch Logo" />
+					<p>{currentPage}</p>
+				</div>
+			{/if}
 			<button on:click={showNav} class="hamburger mobile" id="hamburger-open">
 				<img class="mobile" src={hamburger} alt="Hamburger Icon" />
 			</button>
@@ -34,28 +43,28 @@
 		{#if navShown}
 			<ul id="navList">
 				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-					<a href="/">
+					<a href="/" on:click={() => (currentPage = 'Home')}>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						<img class="logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-					<a href="/projects">
+					<a href="/projects" on:click={() => (currentPage = 'Projects')}>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						Projects
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-					<a href="/about">
+					<a href="/about" on:click={() => (currentPage = 'About')}>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						About
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-					<a href="/contact">
+					<a href="/contact" on:click={() => (currentPage = 'Contact')}>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						Contact
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
@@ -156,6 +165,17 @@
 
 		#topBarHidden {
 			justify-content: space-between;
+		}
+
+		#logoAndText {
+			display: flex;
+			align-items: center;
+			height: 2.5em;
+		}
+
+		#logoAndText p {
+			margin-left: 0.5em;
+			font-family: Arial, Helvetica, sans-serif;
 		}
 
 		#navLogo {
