@@ -35,7 +35,9 @@
 	}
 
 	function hideNav() {
-		navShown = false;
+		if (innerWidth < 600) {
+			navShown = false;
+		}
 	}
 </script>
 
@@ -65,28 +67,52 @@
 		{#if navShown}
 			<ul id="navList">
 				<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-					<a href="/" on:click={() => (currentPage = 'Home')}>
+					<a
+						href="/"
+						on:click={() => {
+							currentPage = 'Home';
+							hideNav();
+						}}
+					>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						<img class="logo" src={logoHorizonal} alt="AnOliveBranch Logo" />
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-					<a href="/projects" on:click={() => (currentPage = 'Projects')}>
+					<a
+						href="/projects"
+						on:click={() => {
+							currentPage = 'Projects';
+							hideNav();
+						}}
+					>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						Projects
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-					<a href="/about" on:click={() => (currentPage = 'About')}>
+					<a
+						href="/about"
+						on:click={() => {
+							currentPage = 'About';
+							hideNav();
+						}}
+					>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						About
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
 					</a>
 				</li>
 				<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-					<a href="/contact" on:click={() => (currentPage = 'Contact')}>
+					<a
+						href="/contact"
+						on:click={() => {
+							currentPage = 'Contact';
+							hideNav();
+						}}
+					>
 						<img class="page-indicator mobile" src={triangleHorizonal} alt="Current Page" />
 						Contact
 						<img class="page-indicator desktop" src={triangleVertical} alt="Current Page" />
