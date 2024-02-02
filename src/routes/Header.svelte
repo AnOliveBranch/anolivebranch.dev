@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import triangleVertical from '$lib/images/triangle-vertical.svg';
 	import triangleHorizonal from '$lib/images/triangle-horizontal.svg';
 	import logoHorizonal from '$lib/images/logo-horizonal.png';
@@ -7,8 +8,27 @@
 	import hamburger from '$lib/images/hamburger.svg';
 	import closeHamburger from '$lib/images/close-hamburger.svg';
 
+	let currentPage = '';
+	switch ($page.url.pathname) {
+		case '/projects':
+			currentPage = 'Projects';
+			break;
+		case '/about':
+			currentPage = 'About';
+			break;
+		case '/contact':
+			currentPage = 'Contact';
+			break;
+		default:
+			currentPage = 'Home';
+	}
+
+	let innerWidth = 0;
 	let navShown = true;
-	let currentPage = 'Projects';
+
+	onMount(() => {
+		navShown = innerWidth > 600;
+	});
 
 	function showNav() {
 		navShown = true;
@@ -18,6 +38,8 @@
 		navShown = false;
 	}
 </script>
+
+<svelte:window bind:innerWidth />
 
 <header>
 	<div id={navShown ? 'topBarShown' : 'topBarHidden'}>
@@ -31,7 +53,7 @@
 			{:else}
 				<div id="logoAndText">
 					<img id="navLogo" class="mobile logo" src={logoOnly} alt="AnOliveBranch Logo" />
-					<p>{currentPage}</p>
+					<p class="mobile">{currentPage}</p>
 				</div>
 			{/if}
 			<button on:click={showNav} class="hamburger mobile" id="hamburger-open">
