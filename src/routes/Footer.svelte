@@ -4,11 +4,9 @@
 
 <footer>
 	<ul>
+		<li>© 2024 AnOliveBranch — MIT License</li>
 		<li>
-			© 2024 AnOliveBranch — <a href="https://mit-license.org/">MIT License</a>
-		</li>
-		<li>
-			<a href="https://github.com/AnOliveBranch/anolivebranch.dev">
+			<a href="https://github.com/AnOliveBranch/anolivebranch.dev" target="_blank">
 				<img src={github} alt="GitHub Logo" />Source
 			</a>
 		</li>
@@ -45,5 +43,14 @@
 
 	li a {
 		text-decoration: none;
+	}
+
+	/*
+	 * Mobile footer design
+	 */
+	@media screen and (max-width: 600px) {
+		ul {
+			flex-direction: column;
+		}
 	}
 </style>
