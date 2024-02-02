@@ -31,6 +31,10 @@
 		padding: 0 10%;
 	}
 
+	ul li {
+		display: inline;
+	}
+
 	li img {
 		height: 1em;
 		padding-right: 0.5em;
@@ -47,7 +51,6 @@
 	@media screen and (max-width: 600px) {
 		ul {
 			flex-direction: column;
-			list-style: none;
 		}
 	}
 </style>
