@@ -4,10 +4,12 @@
 	import discord from '$lib/images/discord-mark-blue.svg';
 	import deezer from '$lib/images/deezer-mark.svg';
 	import mle from '$lib/images/logo-mle-256.png';
+	import kofi from '$lib/images/kofi-logo.png';
 	import githubDetails from '$lib/link-details/github.txt?raw';
 	import discordDetails from '$lib/link-details/discord.txt?raw';
 	import deezerDetails from '$lib/link-details/deezer.txt?raw';
 	import mleDetails from '$lib/link-details/mle.txt?raw';
+	import kofiDetails from '$lib/link-details/kofi.txt?raw';
 	import profilePic from '$lib/images/profile_picture.png';
 </script>
 
@@ -50,6 +52,9 @@
 	</li>
 	<li>
 		<Link img={mle} link="https://mlesports.gg" title="MLE" details={mleDetails} />
+	</li>
+	<li>
+		<Link img={kofi} link="https://ko-fi.com/anolivebranch" title="Ko-Fi" details={kofiDetails} />
 	</li>
 </ul>
 
