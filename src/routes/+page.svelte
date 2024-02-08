@@ -4,6 +4,10 @@
 	import discord from '$lib/images/discord-mark-blue.svg';
 	import deezer from '$lib/images/deezer-mark.svg';
 	import mle from '$lib/images/logo-mle-256.png';
+	import githubDetails from '$lib/link-details/github.txt?raw';
+	import discordDetails from '$lib/link-details/discord.txt?raw';
+	import deezerDetails from '$lib/link-details/deezer.txt?raw';
+	import mleDetails from '$lib/link-details/mle.txt?raw';
 	import profilePic from '$lib/images/profile_picture.png';
 </script>
 
@@ -21,16 +25,31 @@
 
 <ul>
 	<li>
-		<Link img={github} link="https://github.com/AnOliveBranch" title="GitHub" />
+		<Link
+			img={github}
+			link="https://github.com/AnOliveBranch"
+			title="GitHub"
+			details={githubDetails}
+		/>
 	</li>
 	<li>
-		<Link img={discord} link="https://discord.gg/BgZBg3hBDV" title="Discord" />
+		<Link
+			img={discord}
+			link="https://discord.gg/BgZBg3hBDV"
+			title="Discord"
+			details={discordDetails}
+		/>
 	</li>
 	<li>
-		<Link img={deezer} link="https://www.deezer.com/us/profile/4872646322" title="Deezer" />
+		<Link
+			img={deezer}
+			link="https://www.deezer.com/us/profile/4872646322"
+			title="Deezer"
+			details={deezerDetails}
+		/>
 	</li>
 	<li>
-		<Link img={mle} link="https://mlesports.gg" title="MLE" />
+		<Link img={mle} link="https://mlesports.gg" title="MLE" details={mleDetails} />
 	</li>
 </ul>
 
