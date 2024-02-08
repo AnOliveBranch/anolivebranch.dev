@@ -12,7 +12,7 @@
 <div id="top">
 	<h1>AnOliveBranch</h1>
 	<img src={profilePic} alt="Profile" />
-	<p>they/she</p>
+	<p>they/she<sup><a href="https://en.pronouns.page/@AnOliveBranch" target="_blank">?</a></sup></p>
 </div>
 
 <h2>My Links</h2>
@@ -58,5 +58,10 @@
 	h1,
 	p {
 		margin: 0;
+	}
+
+	sup a {
+		color: rgb(100, 166, 241);
+		text-decoration: none;
 	}
 </style>
