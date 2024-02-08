@@ -14,7 +14,7 @@
 </script>
 
 <head>
-	<title>AnOliveBranch - Home</title>
+	<title>AnOliveBranch - Ideas Unfolding</title>
 </head>
 
 <div id="top">
