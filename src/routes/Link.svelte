@@ -45,6 +45,11 @@
 		box-shadow: -3px 3px 5px 10px rgb(35, 35, 35);
 	}
 
+	div#front:hover,
+	div#back:hover {
+		border: 2px solid rgb(100, 166, 241);
+	}
+
 	img,
 	p#details {
 		padding: 0 1em 1em 1em;
