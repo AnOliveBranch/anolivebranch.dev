@@ -2,6 +2,7 @@
 	import Link from './Link.svelte';
 	import github from '$lib/images/github-mark-white.svg';
 	import discord from '$lib/images/discord-mark-blue.svg';
+	import deezer from '$lib/images/deezer-mark.svg';
 	import profilePic from '$lib/images/profile_picture.png';
 </script>
 
@@ -25,7 +26,7 @@
 		<Link img={discord} link="https://discord.gg/BgZBg3hBDV" title="Discord" />
 	</li>
 	<li>
-		<Link img={github} link="https://github.com/AnOliveBranch" title="GitHub" />
+		<Link img={deezer} link="https://www.deezer.com/us/profile/4872646322" title="Deezer" />
 	</li>
 	<li>
 		<Link img={github} link="https://github.com/AnOliveBranch" title="GitHub" />
