@@ -3,6 +3,7 @@
 	import github from '$lib/images/github-mark-white.svg';
 	import discord from '$lib/images/discord-mark-blue.svg';
 	import deezer from '$lib/images/deezer-mark.svg';
+	import mle from '$lib/images/logo-mle-256.png';
 	import profilePic from '$lib/images/profile_picture.png';
 </script>
 
@@ -29,10 +30,7 @@
 		<Link img={deezer} link="https://www.deezer.com/us/profile/4872646322" title="Deezer" />
 	</li>
 	<li>
-		<Link img={github} link="https://github.com/AnOliveBranch" title="GitHub" />
-	</li>
-	<li>
-		<Link img={github} link="https://github.com/AnOliveBranch" title="GitHub" />
+		<Link img={mle} link="https://mlesports.gg" title="MLE" />
 	</li>
 </ul>
 
