@@ -43,6 +43,9 @@
 		/>
 	</li>
 	<li>
+		<Link img={kofi} link="https://ko-fi.com/anolivebranch" title="Ko-Fi" details={kofiDetails} />
+	</li>
+	<li>
 		<Link
 			img={deezer}
 			link="https://www.deezer.com/us/profile/4872646322"
@@ -52,9 +55,6 @@
 	</li>
 	<li>
 		<Link img={mle} link="https://mlesports.gg" title="MLE" details={mleDetails} />
-	</li>
-	<li>
-		<Link img={kofi} link="https://ko-fi.com/anolivebranch" title="Ko-Fi" details={kofiDetails} />
 	</li>
 </ul>
 
