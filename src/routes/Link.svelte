@@ -17,18 +17,19 @@
 
 {#if side == 'front'}
 	<div id="front">
-		<p id="title">{title}</p>
-		<img src={img} alt={title} />
-		<div class="bottom">
-			<a href={link} target="_blank">Link</a>
-			<button on:click={showBack}>About</button>
-		</div>
+		<a href={link} target="_blank">
+			<h1>{title}</h1>
+			<img src={img} alt={title} />
+		</a>
+		<button on:click={showBack}>About</button>
 	</div>
 {:else}
 	<div id="back">
-		<p id="title">{title}</p>
-		<p id="details">{details}</p>
-		<button class="bottom" on:click={showFront}>Back</button>
+		<a href={link} target="_blank">
+			<h1>{title}</h1>
+			<p id="details">{details}</p>
+		</a>
+		<button on:click={showFront}>Back</button>
 	</div>
 {/if}
 
@@ -42,20 +43,13 @@
 		height: 300px;
 		background-color: rgb(40, 40, 40);
 		border-radius: 10%;
+		border: 2px solid rgb(35, 35, 35);
 		box-shadow: -3px 3px 5px 10px rgb(35, 35, 35);
 	}
 
 	div#front:hover,
 	div#back:hover {
 		border: 2px solid rgb(100, 166, 241);
-	}
-
-	img,
-	p#details {
-		padding: 0 1em 1em 1em;
-		margin: 0;
-		height: 150px;
-		object-fit: contain;
 	}
 
 	p,
@@ -68,11 +62,16 @@
 	a {
 		text-decoration: none;
 		color: white;
-		text-align: center;
-		font-size: 1.5em;
-		transition: 0.5s;
-		margin: 0;
-		padding: 0;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	a img,
+	a p {
+		width: 150px;
+		object-fit: contain;
+		margin: auto;
 	}
 
 	button {
@@ -81,23 +80,12 @@
 		color: white;
 		font-size: 1.5em;
 		cursor: pointer;
-		margin: 0;
-		padding: 0;
-	}
-
-	.bottom {
-		display: flex;
-		justify-content: space-around;
-	}
-
-	.bottom a,
-	.bottom button,
-	button.bottom {
+		width: 100%;
 		padding: 1em;
 	}
 
-	p#title {
-		margin: 0;
+	h1 {
 		font-size: 1.5em;
+		font-weight: 100;
 	}
 </style>
