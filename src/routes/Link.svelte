@@ -47,8 +47,13 @@
 		box-shadow: -3px 3px 5px 10px rgb(35, 35, 35);
 	}
 
-	div#front:hover,
-	div#back:hover {
+	a,
+	button {
+		border: 2px solid rgb(40, 40, 40);
+	}
+
+	a:hover,
+	button:hover {
 		border: 2px solid rgb(100, 166, 241);
 	}
 
@@ -65,6 +70,7 @@
 		height: 200px;
 		display: flex;
 		flex-direction: column;
+		padding: 0.5em;
 	}
 
 	a img,
@@ -75,13 +81,26 @@
 	}
 
 	button {
-		border: none;
 		background: none;
 		color: white;
 		font-size: 1.5em;
 		cursor: pointer;
 		width: 100%;
 		padding: 1em;
+		border: none;
+		border-top: 2px solid rgb(40, 40, 40);
+	}
+
+	a:hover {
+		background-color: rgb(50, 50, 50);
+		border-top-left-radius: 10%;
+		border-top-right-radius: 10%;
+	}
+
+	button:hover {
+		background-color: rgb(50, 50, 50);
+		border-bottom-left-radius: 10%;
+		border-bottom-right-radius: 10%;
 	}
 
 	h1 {
