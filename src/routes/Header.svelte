@@ -177,7 +177,7 @@
 	/*
 	 * Mobile navigation design
 	 */
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 60rem) {
 		.desktop {
 			display: none;
 		}
@@ -240,7 +240,7 @@
 	/*
 	 * Desktop navigation design
 	 */
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 60rem) {
 		.mobile {
 			display: none;
 		}
