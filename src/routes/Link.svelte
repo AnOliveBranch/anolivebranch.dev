@@ -43,18 +43,8 @@
 		height: 300px;
 		background-color: rgb(40, 40, 40);
 		border-radius: 10%;
-		border: 2px solid rgb(35, 35, 35);
+		border: 3px solid rgb(35, 35, 35);
 		box-shadow: -3px 3px 5px 10px rgb(35, 35, 35);
-	}
-
-	a,
-	button {
-		border: 2px solid rgb(40, 40, 40);
-	}
-
-	a:hover,
-	button:hover {
-		border: 2px solid rgb(100, 166, 241);
 	}
 
 	p,
@@ -91,20 +81,13 @@
 		border-top: 2px solid rgb(40, 40, 40);
 	}
 
-	a:hover {
-		background-color: rgb(50, 50, 50);
-		border-top-left-radius: 10%;
-		border-top-right-radius: 10%;
-	}
-
-	button:hover {
-		background-color: rgb(50, 50, 50);
-		border-bottom-left-radius: 10%;
-		border-bottom-right-radius: 10%;
-	}
-
 	h1 {
 		font-size: 1.5em;
 		font-weight: 100;
+	}
+
+	div#front:hover,
+	div#back:hover {
+		border: 3px solid rgb(100, 166, 241);
 	}
 </style>
