@@ -27,7 +27,7 @@
 		/>
 	</li>
 	<li>
-		<Link img={email} link="mailto:liv@anolivebranch.dev" title="Email" details={emailDetails} />
+		<Link img={email} link="mailto:contact@anolivebranch.dev" title="Email" details={emailDetails} />
 	</li>
 </ul>
 
