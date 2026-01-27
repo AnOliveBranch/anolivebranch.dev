@@ -4,7 +4,7 @@
 
 <footer>
 	<ul>
-		<li>© 2024 AnOliveBranch — MIT License</li>
+		<li>© 2026 AnOliveBranch — MIT License</li>
 		<li>
 			<a href="https://github.com/AnOliveBranch/anolivebranch.dev" target="_blank">
 				<img src={github} alt="GitHub Logo" />Source
