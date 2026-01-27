@@ -9,14 +9,14 @@
 </head>
 
 <div id="top">
-	<h1>About Me - Liv</h1>
+	<h1>About Me - Olive</h1>
 	<img src={profilePic} alt="Profile" id="pfp" />
 </div>
 
 <ul>
 	<li>
 		<h2>Queer to the core</h2>
-		<p>I am an agender transfemme polyamorous lesbian</p>
+		<p>I am an agender lesbian, my identity is complex</p>
 		<img src={transflag} alt="Transgender pride flag" />
 		<p>
 			I am loud and proud when it comes to my queer identity. I openly talk about my experiences,
@@ -35,7 +35,7 @@
 		<h2>Community Leader</h2>
 		<img src={mle} alt="MLE logo" />
 		<p>
-			I hold the position of board member and director of community for Minor League Esports. My
+			I hold the position of board member and head of community for Minor League Esports. My
 			positions come with many responsibilities as one of the most visible high-level staff members
 			in the community.
 		</p>
@@ -47,12 +47,12 @@
 			with the league financials and managing the structure and goals of the organization as a
 			whole.
 		</p>
-		<h3>Community Director</h3>
+		<h3>Head of Community</h3>
 		<p>
-			As the MLE director of community, I oversee admissions, events, moderation, and user
+			As the MLE head of community, I oversee admissions, events, moderation, and user
 			experience for the entire league. I drive change any place I can to improve the departments
-			under me. I work with the department coordinators to ensure they have the necessary tools to
-			run their departments.
+			under me. I work with the department coordinators and my director under me to ensure they have 
+            the necessary tools to run their departments.
 		</p>
 	</li>
 </ul>

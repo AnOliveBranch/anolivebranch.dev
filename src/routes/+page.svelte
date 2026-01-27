@@ -20,7 +20,7 @@
 <div id="top">
 	<h1>AnOliveBranch</h1>
 	<img src={profilePic} alt="Profile" />
-	<p>they/she<sup><a href="https://en.pronouns.page/@AnOliveBranch" target="_blank">?</a></sup></p>
+	<p>they/it<sup><a href="https://en.pronouns.page/@AnOliveBranch" target="_blank">?</a></sup></p>
 </div>
 
 <h2>My Links</h2>
